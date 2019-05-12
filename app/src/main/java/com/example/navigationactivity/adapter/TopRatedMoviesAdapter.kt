@@ -34,7 +34,7 @@ class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) 
         fun bindMovie(movie: Movie) {
             with(view) {
                 Picasso.get().load(URL_POSTER + movie.poster).into(poster)
-                description.text = movie.overview
+                description.text = movie.title
             }
         }
     }

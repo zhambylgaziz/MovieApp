@@ -14,6 +14,7 @@ import com.example.navigationactivity.adapter.TopRatedMoviesAdapter
 import com.example.navigationactivity.loaders.PopularMoviesLoader
 import com.example.navigationactivity.loaders.TopRatedMoviesLoader
 import com.example.navigationactivity.model.Movie
+import com.example.navigationactivity.model.MovieResponse
 import kotlinx.android.synthetic.main.fragment_home.*
 
 const val TYPE_POPULAR = 0
@@ -49,12 +50,12 @@ class HomeFragment : Fragment(), MovieLoadListener {
         }
     }
 
-    override fun onMoviesLoaded(movies: List<Movie>, type: Int) {
+    override fun onMoviesLoaded(movies: MovieResponse, type: Int) {
         if(type == TYPE_POPULAR){
-            popularMoviesAdapter.setMovies(movies)
+            popularMoviesAdapter.setMovies(movies.movies)
         }
         if(type == TYPE_TOP_RATED){
-            topRatedMoviesAdapter.setMovies(movies)
+            topRatedMoviesAdapter.setMovies(movies.movies)
         }
     }
 
