@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         createHomeFragment()
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
+
     private fun createHomeFragment(){
         val transaction = manager.beginTransaction()
         val fragment = HomeFragment()

@@ -1,35 +1,65 @@
 package com.example.navigationactivity
 
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import com.example.navigationactivity.adapter.PopularAdapter
+import android.widget.Toast
+import com.example.navigationactivity.adapter.PopularMoviesAdapter
+import com.example.navigationactivity.adapter.TopRatedMoviesAdapter
+import com.example.navigationactivity.loaders.PopularMoviesLoader
+import com.example.navigationactivity.loaders.TopRatedMoviesLoader
+import com.example.navigationactivity.model.Movie
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.view.*
 
-
-class HomeFragment : Fragment() {
+const val TYPE_POPULAR = 0
+const val TYPE_TOP_RATED = 1
+class HomeFragment : Fragment(), MovieLoadListener {
+    private val popularMoviesLoader by lazy { PopularMoviesLoader(this) }
+    private val topRatedMoviesLoader by lazy { TopRatedMoviesLoader(this) }
+    private val popularMoviesAdapter by lazy { PopularMoviesAdapter() }
+    private val topRatedMoviesAdapter by lazy { TopRatedMoviesAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
-
-        val movies: ArrayList<String> = ArrayList()
-        for(i in 1..100){
-            movies.add("Post $i")
-        }
-        val adapter = PopularAdapter(movies)
-        view.popular.adapter = adapter
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUI()
+        popularMoviesLoader.loadMovies()
+        topRatedMoviesLoader.loadMovies()
+    }
+    private fun initUI() {
+         with(popular_movies){
+            layoutManager = LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
+            adapter = popularMoviesAdapter
+         }
+        with(toprated_movies){
+            layoutManager = LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
+            adapter = topRatedMoviesAdapter
+        }
+    }
+
+    override fun onMoviesLoaded(movies: List<Movie>, type: Int) {
+        if(type == TYPE_POPULAR){
+            popularMoviesAdapter.setMovies(movies)
+        }
+        if(type == TYPE_TOP_RATED){
+            topRatedMoviesAdapter.setMovies(movies)
+        }
+    }
+
+    override fun onMoviesLoadError(throwable: Throwable) {
+        Toast.makeText(activity, throwable.message, Toast.LENGTH_SHORT).show()
+    }
 
 }

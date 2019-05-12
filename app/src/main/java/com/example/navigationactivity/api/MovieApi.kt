@@ -7,6 +7,12 @@ import retrofit2.Call
 
 interface MovieApi {
     @GET("popular?api_key=" + API_KEY)
-    fun getMovie(): Call<List<Movie>>
+    fun getPopularMovies(): Call<List<Movie>>
+
+    @GET("toprated?api_key=" + API_KEY)
+    fun getTopRated(): Call<List<Movie>>
+
+//    @GET("popular?api_key=" + API_KEY)
+//    fun getPopularMovies(): Call<List<Movie>>
 
 }
