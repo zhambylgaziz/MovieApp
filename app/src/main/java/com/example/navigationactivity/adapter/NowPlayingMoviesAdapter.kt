@@ -11,11 +11,11 @@ import com.example.navigationactivity.model.Movie
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.raw_movies.view.*
 
-class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<TopRatedMoviesAdapter.ViewHolder>(){
+class NowPlayingMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<NowPlayingMoviesAdapter.ViewHolder>(){
 
     private lateinit var movieClickListener: MovieClickListener
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopRatedMoviesAdapter.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NowPlayingMoviesAdapter.ViewHolder
             = ViewHolder(LayoutInflater.from(parent.context)
         .inflate(R.layout.raw_movies, parent, false))
 
@@ -48,5 +48,4 @@ class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) 
         }
     }
 }
-
 

@@ -1,38 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".HomeFragment"
-              android:orientation="vertical">
+              android:background="?attr/backgroundcolor">
 
-    <TextView android:id="@+id/popular_textView"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/popular_label"
-              android:layout_margin="@dimen/normal_margin"/>
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/popular_movies"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            tools:listitem="@layout/raw_movies"
-            android:layout_margin="@dimen/normal_margin"
-            android:orientation="horizontal"
-    />
+    <LinearLayout android:id="@+id/home_fragment_holder"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginBottom="22dp" >
 
-    <TextView android:id="@+id/top_textView"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/toprated_label"
-              android:layout_margin="@dimen/normal_margin"/>
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/toprated_movies"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            tools:listitem="@layout/raw_movies"
-            android:orientation="horizontal"
-            android:layout_margin="@dimen/normal_margin"
-    />
+        <TextView android:id="@+id/popular_textView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/popular_label"
+                  android:textColor="?attr/textcolor"
+                  android:textStyle="bold"
+                  android:textSize="22sp"
+                  android:layout_margin="@dimen/normal_margin" />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/popular_movies"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/raw_movies"
+                android:layout_margin="@dimen/normal_margin"
+                android:orientation="horizontal" />
+
+        <TextView android:id="@+id/top_textView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/toprated_label"
+                  android:layout_margin="@dimen/normal_margin"
+                  android:textStyle="bold"
+                  android:textSize="22sp"
+                  android:textColor="?attr/textcolor" />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/toprated_movies"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/raw_movies"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/normal_margin" />
+
+        <TextView android:id="@+id/upcoming_textView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/upcoming_label"
+                  android:layout_margin="@dimen/normal_margin"
+                  android:textStyle="bold"
+                  android:textSize="22sp"
+                  android:textColor="?attr/textcolor" />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/upcoming_movies"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/raw_movies"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/normal_margin" />
+
+        <TextView android:id="@+id/nowPlaying_textView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/now_playing_label"
+                  android:layout_margin="@dimen/normal_margin"
+                  android:textStyle="bold"
+                  android:textSize="22sp"
+                  android:textColor="?attr/textcolor" />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/nowPlaying_movies"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/raw_movies"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/normal_margin" />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".FavouritesFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="?attr/backgroundcolor"
+              android:orientation="vertical"
+              tools:context=".fragments.FavouritesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TextView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:text="@string/favourites_label"
+              android:layout_margin="@dimen/normal_margin" />
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/favourite_movies"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:listitem="@layout/raw_movies"
+            android:layout_margin="@dimen/normal_margin"
+            android:orientation="horizontal" />
+
+    <Button
+            android:id="@+id/sign_out_button"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/sign_out_label"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/sign_up_button_bg" />
 
-</FrameLayout>
+</LinearLayout>

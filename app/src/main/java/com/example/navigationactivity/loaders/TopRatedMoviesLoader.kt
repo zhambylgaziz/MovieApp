@@ -1,13 +1,13 @@
 package com.example.navigationactivity.loaders
 
-import com.example.navigationactivity.MovieLoadListener
+import com.example.navigationactivity.MoviesLoadListener
 import com.example.navigationactivity.api.MovieService
 import com.example.navigationactivity.model.MovieResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 const val TYPE_TOP_RATED = 1
-class TopRatedMoviesLoader(val listener: MovieLoadListener): Callback<MovieResponse> {
+class TopRatedMoviesLoader(val listener: MoviesLoadListener): Callback<MovieResponse> {
 
     fun loadMovies(){
         MovieService.movieApi.getTopRated().enqueue(this)

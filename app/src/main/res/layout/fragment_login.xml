@@ -3,10 +3,10 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".LoginFragment"
+              tools:context=".fragments.LoginFragment"
               android:orientation="vertical"
               android:gravity="center"
-              android:background="#00C26969">
+              android:background="?attr/backgroundcolor" >
 
     <EditText
             android:id="@+id/email_input"
@@ -14,8 +14,10 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="@string/email_hint"
+            android:textColorHint="@color/colorGrey"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:textColor="?attr/textcolor" />
 
     <EditText
             android:id="@+id/password_input"
@@ -24,8 +26,10 @@
             android:layout_marginTop="@dimen/normal_margin"
             android:inputType="textPassword"
             android:hint="@string/password_hint"
+            android:textColorHint="@color/colorGrey"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:textColor="?attr/textcolor" />
 
     <Button
             android:id="@+id/sign_in_button"
@@ -34,7 +38,8 @@
             android:layout_marginTop="@dimen/normal_margin"
             android:text="@string/sign_in_label"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:background="@drawable/sign_in_button_bg" />
 
     <Button
             android:id="@+id/sign_up_button"
@@ -43,7 +48,7 @@
             android:layout_marginTop="@dimen/normal_margin"
             android:text="@string/sign_up_label"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
-
+            android:layout_marginRight="20dp"
+            android:background="@drawable/sign_up_button_bg" />
 
 </LinearLayout>

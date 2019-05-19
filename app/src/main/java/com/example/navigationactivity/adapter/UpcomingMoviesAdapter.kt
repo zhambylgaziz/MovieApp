@@ -1,6 +1,7 @@
 package com.example.navigationactivity.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +12,11 @@ import com.example.navigationactivity.model.Movie
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.raw_movies.view.*
 
-class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<TopRatedMoviesAdapter.ViewHolder>(){
+class UpcomingMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<UpcomingMoviesAdapter.ViewHolder>(){
 
     private lateinit var movieClickListener: MovieClickListener
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopRatedMoviesAdapter.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpcomingMoviesAdapter.ViewHolder
             = ViewHolder(LayoutInflater.from(parent.context)
         .inflate(R.layout.raw_movies, parent, false))
 
@@ -48,5 +49,4 @@ class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) 
         }
     }
 }
-
 

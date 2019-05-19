@@ -3,11 +3,13 @@ package com.example.navigationactivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.example.navigationactivity.fragments.*
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    val manager = supportFragmentManager
+    private val manager = supportFragmentManager
     private val firebaseAuth by lazy { FirebaseAuth.getInstance() }
+
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         createHomeFragment()
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        supportActionBar!!.hide()
     }
 
     private fun createHomeFragment(){
@@ -51,8 +54,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createFavouritesFragment(){
-        val user = firebaseAuth.currentUser
         val transaction = manager.beginTransaction()
+        val user = firebaseAuth.currentUser
         if (user != null) {
             val fragment = FavouritesFragment()
             transaction.replace(R.id.fragmentHolder, fragment)

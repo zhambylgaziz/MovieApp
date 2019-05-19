@@ -14,4 +14,15 @@
     <string name="sign_up_label">Sign up</string>
     <string name="popular_label">Popular</string>
     <string name="toprated_label">Top Rated</string>
+    <string name="recomended_label">Recomended</string>
+    <string name="movie_title_label">Movie title</string>
+    <string name="movie_overview_label">Movie overview</string>
+    <string name="movie_poster_desc">Movie poster</string>
+    <string name="genres_label">Genres</string>
+    <string name="movies_label">Movies</string>
+    <string name="favourites_label">Favourites</string>
+    <string name="sign_out_label">Sign out</string>
+    <string name="movie_images_label">Movie Images</string>
+    <string name="upcoming_label">Upcoming</string>
+    <string name="now_playing_label">Now Playing</string>
 </resources>
