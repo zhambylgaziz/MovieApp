@@ -79,7 +79,7 @@ class MovieActivity : AppCompatActivity(), MoviesLoadListener, VideoLoadListener
     private fun loadData() {
         val user = firebaseAuth.currentUser
         if (user != null) {
-            moviesCollection.whereEqualTo("user", user)
+            moviesCollection.whereEqualTo("user", user.email.toString())
                 .whereEqualTo("id", intent.getStringExtra("id"))
                 .get()
                 .addOnCompleteListener{ task->
