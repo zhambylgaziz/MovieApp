@@ -1,6 +1,6 @@
 package com.example.navigationactivity.loaders
 
-import com.example.navigationactivity.MoviesLoadListener
+import com.example.navigationactivity.listener.MoviesLoadListener
 import com.example.navigationactivity.api.MovieService
 import com.example.navigationactivity.model.Movie
 import com.example.navigationactivity.model.MovieResponse
@@ -9,6 +9,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 const val TYPE_RECOMMENDED = 2
+
 class RecommendedMoviesLoader(val listener: MoviesLoadListener): Callback<MovieResponse> {
 
     fun loadMovies(movie: Movie){

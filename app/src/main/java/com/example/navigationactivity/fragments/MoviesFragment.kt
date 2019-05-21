@@ -1,6 +1,7 @@
 package com.example.navigationactivity.fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -12,6 +13,10 @@ import android.widget.Toast
 import com.example.navigationactivity.*
 import com.example.navigationactivity.adapter.GenresAdapter
 import com.example.navigationactivity.adapter.MovieByGenresAdapter
+import com.example.navigationactivity.listener.GenreClickListener
+import com.example.navigationactivity.listener.GenresLoadListener
+import com.example.navigationactivity.listener.MovieClickListener
+import com.example.navigationactivity.listener.MoviesLoadListener
 import com.example.navigationactivity.loaders.GenresLoader
 import com.example.navigationactivity.loaders.MoviesByGenresLoader
 import com.example.navigationactivity.model.Genre
@@ -21,7 +26,10 @@ import com.example.navigationactivity.model.MovieResponse
 import kotlinx.android.synthetic.main.fragment_movies.*
 
 
-class MoviesFragment : Fragment(), GenresLoadListener, GenreClickListener, MoviesLoadListener, MovieClickListener  {
+class MoviesFragment : Fragment(), GenresLoadListener,
+    GenreClickListener,
+    MoviesLoadListener,
+    MovieClickListener {
 
     private val genresLoader by lazy { GenresLoader(this) }
     private val genresAdapter by lazy { GenresAdapter() }
@@ -73,6 +81,8 @@ class MoviesFragment : Fragment(), GenresLoadListener, GenreClickListener, Movie
     }
 
     override fun onMovieClicked(movie: Movie) {
-        Toast.makeText(activity, movie.title, Toast.LENGTH_SHORT).show()
+        val intent = Intent(activity, MovieActivity::class.java)
+        intent.putExtra("id", movie.id.toString())
+        startActivity(intent)
     }
 }

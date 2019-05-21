@@ -25,4 +25,13 @@
     <string name="movie_images_label">Movie Images</string>
     <string name="upcoming_label">Upcoming</string>
     <string name="now_playing_label">Now Playing</string>
+    <string name="movie_poster_label">Movie poster</string>
+    <string name="name_label">Name</string>
+    <string name="character_name_label">Character name</string>
+    <string name="cast_label">Cast</string>
+    <string name="similar_movies_label">Similar movies</string>
+    <string name="profile_image_label">Profile image</string>
+    <string name="add_to_favourites_label">Add to favourites</string>
+    <string name="remove_label">Remove from favourites</string>
+    <string name="video_label">Video name</string>
 </resources>

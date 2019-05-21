@@ -7,19 +7,6 @@
               android:orientation="vertical"
               tools:context=".fragments.FavouritesFragment">
 
-    <TextView android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:text="@string/favourites_label"
-              android:layout_margin="@dimen/normal_margin" />
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/favourite_movies"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            tools:listitem="@layout/raw_movies"
-            android:layout_margin="@dimen/normal_margin"
-            android:orientation="horizontal" />
-
     <Button
             android:id="@+id/sign_out_button"
             android:layout_width="match_parent"
@@ -29,5 +16,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/sign_up_button_bg" />
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:text="@string/favourites_label"
+              android:layout_margin="@dimen/normal_margin" />
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/favourite_movies"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:listitem="@layout/favourite_movie_item"
+            android:layout_margin="@dimen/normal_margin" />
 
 </LinearLayout>

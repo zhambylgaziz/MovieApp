@@ -1,9 +1,7 @@
 package com.example.navigationactivity.api
 
 import com.example.navigationactivity.BuildConfig.API_KEY
-import com.example.navigationactivity.model.GenreResponse
-import com.example.navigationactivity.model.Movie
-import com.example.navigationactivity.model.MovieResponse
+import com.example.navigationactivity.model.*
 import retrofit2.http.GET
 import retrofit2.Call
 import retrofit2.http.Path
@@ -45,5 +43,20 @@ interface MovieApi {
 //    https://api.themoviedb.org/3/movie/now_playing?api_key=c1a56cd2c2fc4c9ce489531a5f5d1cd9
     @GET("movie/now_playing?api_key=" + API_KEY)
     fun getNowPlaying(): Call<MovieResponse>
+
+//    Cast
+//    https://api.themoviedb.org/3/movie/13/credits?api_key=c1a56cd2c2fc4c9ce489531a5f5d1cd9
+    @GET("movie/{id}/credits?api_key=" + API_KEY)
+    fun getCast(@Path("id") id: String): Call<CastResponse>
+
+//    Similar movies
+//    https://api.themoviedb.org/3/movie/13/similar?api_key=c1a56cd2c2fc4c9ce489531a5f5d1cd9
+    @GET("movie/{id}/similar?api_key=" + API_KEY)
+    fun getSimilar(@Path("id") id: String): Call<MovieResponse>
+
+//    Get videos
+//    https://api.themoviedb.org/3/movie/13/videos?api_key=c1a56cd2c2fc4c9ce489531a5f5d1cd9
+    @GET("movie/{id}/videos?api_key=" + API_KEY)
+    fun getVideos(@Path("id") id: String): Call<VideoResponse>
 
 }

@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         createHomeFragment()
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         supportActionBar!!.hide()
+
     }
 
     private fun createHomeFragment(){

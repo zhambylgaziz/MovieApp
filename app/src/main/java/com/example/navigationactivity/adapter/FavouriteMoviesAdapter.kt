@@ -9,15 +9,15 @@ import com.example.navigationactivity.listener.MovieClickListener
 import com.example.navigationactivity.R
 import com.example.navigationactivity.model.Movie
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.raw_movies.view.*
+import kotlinx.android.synthetic.main.favourite_movie_item.view.*
 
-class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<TopRatedMoviesAdapter.ViewHolder>(){
+class FavouriteMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) : RecyclerView.Adapter<FavouriteMoviesAdapter.ViewHolder>(){
 
     private lateinit var movieClickListener: MovieClickListener
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopRatedMoviesAdapter.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteMoviesAdapter.ViewHolder
             = ViewHolder(LayoutInflater.from(parent.context)
-        .inflate(R.layout.raw_movies, parent, false))
+        .inflate(R.layout.favourite_movie_item, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindMovie(movies[position])
@@ -38,8 +38,9 @@ class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         fun bindMovie(movie: Movie) {
             with(view) {
-                Picasso.get().load(URL_POSTER + movie.poster).into(poster)
-                description.text = movie.title
+                Picasso.get().load(URL_POSTER + movie.poster).into(fav_movie_poster)
+                fav_movie_title.text = movie.title
+                fav_movie_overview.text = movie.overview
 
                 setOnClickListener {
                     movieClickListener.onMovieClicked(movie)
@@ -48,5 +49,4 @@ class TopRatedMoviesAdapter(private val movies: ArrayList<Movie> = ArrayList()) 
         }
     }
 }
-
 

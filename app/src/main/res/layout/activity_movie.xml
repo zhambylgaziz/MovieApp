@@ -10,12 +10,13 @@
                   tools:context=".fragments.MovieFragment"
                   android:orientation="vertical"
                   android:background="?attr/backgroundcolor"
-                  android:layout_marginBottom="16dp">
+                  android:layout_marginBottom="22dp">
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/poster_movie"/>
+                android:id="@+id/poster_movie"
+                android:contentDescription="@string/movie_poster_label"/>
         <TextView
                 android:id="@+id/movie_title"
                 android:layout_width="match_parent"
@@ -25,6 +26,14 @@
                 android:textStyle="bold"
                 android:textSize="22sp"
                 android:layout_margin="@dimen/normal_margin" />
+
+        <Button android:id="@+id/add_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/add_to_favourites_label"
+                android:background="?attr/backgroundcolor"
+                android:textColor="@color/colorWhite" />
         <TextView
                 android:id="@+id/movie_overview"
                 android:layout_width="match_parent"
@@ -33,15 +42,59 @@
                 android:textColor="?attr/textcolor"
                 android:layout_margin="@dimen/normal_margin" />
 
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/companies_logo"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/production_logo"
+                android:layout_margin="@dimen/normal_margin"
+                android:orientation="horizontal" />
+
+        <TextView android:id="@+id/cast_textview"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/cast_label"
+                  android:textColor="?attr/textcolor"
+                  android:layout_margin="@dimen/normal_margin" />
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/cast_recyclerview"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/cast_item"
+                android:layout_margin="@dimen/normal_margin"
+                android:orientation="horizontal" />
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/videos_recyclerview"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/video_item"
+                android:layout_margin="@dimen/normal_margin"
+                android:orientation="horizontal" />
+
         <TextView android:id="@+id/recomended_textview"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="@string/recomended_label"
                   android:textColor="?attr/textcolor"
                   android:layout_margin="@dimen/normal_margin" />
-
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recomended_movies"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:listitem="@layout/raw_movies"
+                android:layout_margin="@dimen/normal_margin"
+                android:orientation="horizontal" />
+
+        <TextView android:id="@+id/similar_textview"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/similar_movies_label"
+                  android:textColor="?attr/textcolor"
+                  android:layout_margin="@dimen/normal_margin" />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/similar_movies"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 tools:listitem="@layout/raw_movies"

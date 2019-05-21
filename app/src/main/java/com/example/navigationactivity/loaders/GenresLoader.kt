@@ -1,6 +1,6 @@
 package com.example.navigationactivity.loaders
 
-import com.example.navigationactivity.GenresLoadListener
+import com.example.navigationactivity.listener.GenresLoadListener
 import com.example.navigationactivity.api.MovieService
 import com.example.navigationactivity.model.GenreResponse
 

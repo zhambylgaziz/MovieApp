@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.navigationactivity.GenreClickListener
+import com.example.navigationactivity.listener.GenreClickListener
 import com.example.navigationactivity.R
 import com.example.navigationactivity.model.Genre
 import kotlinx.android.synthetic.main.list_genres.view.*

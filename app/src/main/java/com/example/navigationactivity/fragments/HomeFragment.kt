@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.navigationactivity.MovieActivity
-import com.example.navigationactivity.MovieClickListener
-import com.example.navigationactivity.MoviesLoadListener
+import com.example.navigationactivity.listener.MovieClickListener
+import com.example.navigationactivity.listener.MoviesLoadListener
 import com.example.navigationactivity.R
 import com.example.navigationactivity.adapter.NowPlayingMoviesAdapter
 import com.example.navigationactivity.adapter.PopularMoviesAdapter
@@ -54,6 +54,7 @@ class HomeFragment : Fragment(), MoviesLoadListener,
         popularMoviesAdapter.setListener(this)
         topRatedMoviesAdapter.setListener(this)
         upcomingMoviesAdapter.setListener(this)
+        nowPlayingMoviesAdapter.setListener(this)
 
         with(popular_movies){
             layoutManager = LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
@@ -84,7 +85,7 @@ class HomeFragment : Fragment(), MoviesLoadListener,
             upcomingMoviesAdapter.setMovies(movies.movies)
         }
         if(type == TYPE_NOW_PLAYING){
-            upcomingMoviesAdapter.setMovies(movies.movies)
+            nowPlayingMoviesAdapter.setMovies(movies.movies)
         }
     }
 

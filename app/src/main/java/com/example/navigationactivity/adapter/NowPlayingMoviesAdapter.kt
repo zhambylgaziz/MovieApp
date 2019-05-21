@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.navigationactivity.BuildConfig.URL_POSTER
-import com.example.navigationactivity.MovieClickListener
+import com.example.navigationactivity.listener.MovieClickListener
 import com.example.navigationactivity.R
 import com.example.navigationactivity.model.Movie
 import com.squareup.picasso.Picasso

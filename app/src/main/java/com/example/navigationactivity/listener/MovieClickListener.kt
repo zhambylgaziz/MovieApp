@@ -1,4 +1,4 @@
-package com.example.navigationactivity
+package com.example.navigationactivity.listener
 
 import com.example.navigationactivity.model.Movie
 
